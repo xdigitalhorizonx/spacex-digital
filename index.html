@@ -1,0 +1,415 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>spacex.digital â€” Live SpaceX Launch Tracker & Data Hub</title>
+<meta name="description" content="An independent, live SpaceX mission tracker: next-launch countdown, the flight record, and to-scale Falcon 9, Falcon Heavy & Starship specs â€” built on real public launch data. Unofficial." />
+<link rel="canonical" href="https://spacex.digital/" />
+<meta name="theme-color" content="#05070E" />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="spacex.digital" />
+<meta property="og:title" content="spacex.digital â€” Live SpaceX Launch Tracker & Data Hub" />
+<meta property="og:description" content="Next-launch countdown, the flight record, and to-scale rocket specs â€” on real public data. An independent, unofficial tracker." />
+<meta property="og:url" content="https://spacex.digital/" />
+<meta property="og:image" content="https://spacex.digital/assets/img/hero-launch-base.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="spacex.digital â€” Live SpaceX Launch Tracker" />
+<meta name="twitter:description" content="Live next-launch countdown, the record, and the fleet â€” real public data. Independent & unofficial." />
+<meta name="twitter:image" content="https://spacex.digital/assets/img/hero-launch-base.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+
+
+<!-- No-flash: apply reduced-motion + saved state before paint -->
+<script>
+  (function(){try{
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('reduce-motion');
+  }catch(e){}})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://spacex.digital/#website",
+      "url": "https://spacex.digital/",
+      "name": "spacex.digital",
+      "description": "An independent, unofficial live SpaceX launch tracker and data hub: next-launch countdown, flight record, and rocket specifications built on public launch data.",
+      "inLanguage": "en",
+      "disambiguatingDescription": "Independent fan/informational project. Not affiliated with, endorsed by, or connected to Space Exploration Technologies Corp.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://spacex.digital/#log",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://spacex.digital/#launch-data",
+      "name": "SpaceX launch record (live)",
+      "description": "Live and historical SpaceX launch data â€” upcoming and past missions, vehicle configurations and success record â€” surfaced from The Space Devs' Launch Library 2.",
+      "isAccessibleForFree": true,
+      "creator": { "@type": "Organization", "name": "The Space Devs", "url": "https://thespacedevs.com" },
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "isPartOf": { "@id": "https://spacex.digital/#website" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://spacex.digital/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Is spacex.digital the official SpaceX website?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. spacex.digital is an independent, unofficial project and is not affiliated with, endorsed by, or connected to Space Exploration Technologies Corp. For official information visit spacex.com." } },
+        { "@type": "Question", "name": "Where does the launch data come from?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Live launch and vehicle data is surfaced from The Space Devs' Launch Library 2 API, available under a Creative Commons BY 4.0 license. Historical milestones and yearly cadence figures are drawn from public record." } },
+        { "@type": "Question", "name": "How many times has SpaceX launched?",
+          "acceptedAnswer": { "@type": "Answer", "text": "SpaceX has flown 699 launches with 684 successes â€” a 97.9% success rate â€” including a streak of 184 consecutive successful launches. Figures update live from Launch Library 2." } },
+        { "@type": "Question", "name": "Which rockets does SpaceX fly?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The active fleet is Falcon 9 (a reusable two-stage workhorse), Falcon Heavy (three Falcon 9 cores combined), and Starship â€” a fully reusable super-heavy vehicle in flight testing. Dragon is the crew and cargo spacecraft." } },
+        { "@type": "Question", "name": "When is the next SpaceX launch?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The next scheduled launch, its rocket, launch pad and target orbit are shown live at the top of spacex.digital with a real-time countdown, refreshed automatically from public launch data." } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#record">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-row">
+    <a class="brand" href="#top" aria-label="spacex.digital home">
+      <svg class="brand-mark" viewBox="0 0 32 32" width="26" height="26" aria-hidden="true">
+        <circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="1.4" opacity=".55"/>
+        <ellipse cx="16" cy="16" rx="13" ry="5.2" fill="none" stroke="currentColor" stroke-width="1.4" opacity=".55" transform="rotate(32 16 16)"/>
+        <circle cx="16" cy="16" r="3.1" fill="currentColor"/>
+      </svg>
+      <span class="brand-word">spacex<span class="brand-dot">.digital</span></span>
+      <span class="brand-tag">UNOFFICIAL</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#top">Next launch</a>
+      <a href="#fleet">The fleet</a>
+      <a href="#log">Flight log</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <span class="live-pill" id="livePill" title="Data feed status">
+      <span class="dot" aria-hidden="true"></span><span id="livePillText">DATA&nbsp;LIVE</span>
+    </span>
+  </div>
+</header>
+
+<main id="top">
+  <!-- ============ HERO / MISSION CONTROL ============ -->
+  <section class="hero" aria-labelledby="hero-h1">
+    <div class="hero-media">
+      <img src="assets/img/hero-launch-base.jpg" alt="A rocket climbing on a bright engine plume through a dark, star-filled night sky above a coastal launch pad" fetchpriority="high" decoding="async" />
+      <canvas class="hero-stars" id="heroStars" aria-hidden="true"></canvas>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+    </div>
+
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eb-line"></span>INDEPENDENT SPACEX FLIGHT TRACKER</p>
+        <h1 id="hero-h1">Every SpaceX launch,<br><span class="accent">live</span> â€” in one console.</h1>
+        <p class="hero-sub">The next mission, the whole flight record, and the fleet to scale â€” surfaced from real public launch data and refreshed in real time.</p>
+        <div class="hero-cta">
+          <a class="btn btn-amber" id="watchBtn" href="#log">Track the next launch</a>
+          <a class="btn btn-ghost" href="#fleet">Compare the rockets</a>
+        </div>
+      </div>
+
+      <!-- LIVE COUNTDOWN PANEL -->
+      <aside class="panel countdown" id="countdown" aria-labelledby="cd-label" aria-live="polite">
+        <div class="cd-head">
+          <span class="cd-eyebrow" id="cd-label">NEXT&nbsp;SCHEDULED&nbsp;LAUNCH</span>
+          <span class="badge" id="cdStatus" data-status="Go">GO</span>
+        </div>
+        <p class="cd-mission" id="cdMission">Falcon&nbsp;9 Â· Transporter&nbsp;17</p>
+        <div class="cd-clock" id="cdClock" role="timer" aria-label="Time to launch">
+          <div class="unit"><b id="cdD">00</b><span>DAYS</span></div>
+          <i>:</i>
+          <div class="unit"><b id="cdH">00</b><span>HRS</span></div>
+          <i>:</i>
+          <div class="unit"><b id="cdM">00</b><span>MIN</span></div>
+          <i>:</i>
+          <div class="unit"><b id="cdS">00</b><span>SEC</span></div>
+        </div>
+        <dl class="cd-meta">
+          <div><dt>Vehicle</dt><dd id="cdVehicle">Falcon 9 Block 5</dd></div>
+          <div><dt>Pad</dt><dd id="cdPad">SLC-4E, Vandenberg</dd></div>
+          <div><dt>Orbit</dt><dd id="cdOrbit">Sun-synchronous</dd></div>
+          <div><dt>Window (UTC)</dt><dd id="cdWindow">â€”</dd></div>
+        </dl>
+        <p class="cd-foot"><span id="cdUpdated">Snapshot loaded</span> Â· source <a href="https://thespacedevs.com" rel="noopener" target="_blank">The&nbsp;Space&nbsp;Devs</a></p>
+      </aside>
+    </div>
+    <a class="scroll-cue" href="#record" aria-hidden="true"><span></span>THE RECORD</a>
+  </section>
+
+  <!-- ============ THE RECORD â€” STAT BENTO ============ -->
+  <section class="section record" id="record" aria-labelledby="rec-h">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="kicker"><span class="k-idx">01</span> THE RECORD SO FAR</p>
+        <h2 id="rec-h">Two decades of flying â€” measured.</h2>
+        <p class="sec-sub">The numbers that make SpaceX the most-flown launch provider on Earth. Live from public data; historical figures noted at source.</p>
+      </header>
+
+      <div class="bento" id="statBento">
+        <article class="stat tile-xl" data-count="699" data-dur="1400">
+          <span class="stat-num"><b class="cval">699</b></span>
+          <span class="stat-label">Total launches</span>
+          <span class="stat-note">Falcon&nbsp;1 Â· Falcon&nbsp;9 Â· Falcon&nbsp;Heavy Â· Starship</span>
+        </article>
+        <article class="stat tile-go" data-count="97.9" data-dec="1" data-suffix="%">
+          <span class="stat-num"><b class="cval">97.9</b>%</span>
+          <span class="stat-label">Success rate</span>
+          <span class="stat-note">684 of 699 flights nominal</span>
+        </article>
+        <article class="stat" data-count="184">
+          <span class="stat-num"><b class="cval">184</b></span>
+          <span class="stat-label">Consecutive successes</span>
+          <span class="stat-note">Active streak</span>
+        </article>
+        <article class="stat" data-count="604">
+          <span class="stat-num"><b class="cval">604</b></span>
+          <span class="stat-label">Falcon&nbsp;9 flights</span>
+          <span class="stat-note">Most-flown orbital rocket in service</span>
+        </article>
+        <article class="stat" data-count="130">
+          <span class="stat-num"><b class="cval">130</b></span>
+          <span class="stat-label">On the manifest</span>
+          <span class="stat-note">Scheduled &amp; pending missions</span>
+        </article>
+        <article class="stat tile-year" data-count="24">
+          <span class="stat-num">since&nbsp;<b class="cval-static">2002</b></span>
+          <span class="stat-label">Founded to fly humans to Mars</span>
+          <span class="stat-note">24 years Â· Falcon&nbsp;1 first orbit in 2008</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE FLEET â€” INTERACTIVE COMPARISON ============ -->
+  <section class="section fleet" id="fleet" aria-labelledby="fleet-h">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="kicker"><span class="k-idx">02</span> THE FLEET</p>
+        <h2 id="fleet-h">Three rockets, one idea: fly it again.</h2>
+        <p class="sec-sub">From the workhorse to the tallest rocket ever built. Drag your eye up â€” Starship stands <b>123&nbsp;m</b>, taller than any launch vehicle in history.</p>
+      </header>
+
+      <div class="fleet-grid">
+        <!-- To-scale silhouettes -->
+        <figure class="scale-stage" aria-label="Falcon 9, Falcon Heavy and Starship drawn to the same scale">
+          <div class="scale-row" id="scaleRow"></div>
+          <div class="scale-base"><span>Drawn to scale Â· metres</span></div>
+        </figure>
+
+        <!-- Metric comparison -->
+        <div class="compare panel">
+          <div class="cmp-head">
+            <span class="cd-eyebrow">COMPARE BY</span>
+            <div class="seg" role="tablist" aria-label="Comparison metric" id="cmpSeg">
+              <button role="tab" class="on" data-metric="height" aria-selected="true">Height</button>
+              <button role="tab" data-metric="leo" aria-selected="false">Payload â†’ LEO</button>
+              <button role="tab" data-metric="thrust" aria-selected="false">Liftoff thrust</button>
+              <button role="tab" data-metric="flights" aria-selected="false">Flights flown</button>
+            </div>
+          </div>
+          <div class="bars" id="cmpBars"><!-- JS renders bars --></div>
+          <p class="cmp-foot" id="cmpFoot">Height, nose to base. Starship figures are for the current test vehicle; payload shows its design target.</p>
+        </div>
+      </div>
+
+      <!-- Boxed spec cards -->
+      <div class="cards-3" id="fleetCards">
+        <article class="rocket-card">
+          <header><h3>Falcon&nbsp;9</h3><span class="tag tag-live">Operational</span></header>
+          <p class="rc-desc">The reusable two-stage workhorse. Its first stage flies back and lands to be flown again â€” often within weeks.</p>
+          <dl class="spec">
+            <div><dt>Height</dt><dd>70&nbsp;m</dd></div>
+            <div><dt>Payload â†’ LEO</dt><dd>22,800&nbsp;kg</dd></div>
+            <div><dt>Liftoff thrust</dt><dd>7,607&nbsp;kN</dd></div>
+            <div><dt>Engines</dt><dd>9 Ã— Merlin&nbsp;1D</dd></div>
+            <div><dt>Flights</dt><dd>604 Â· 603 landed-class successes</dd></div>
+            <div><dt>Debut</dt><dd>Block&nbsp;5 Â· 2018</dd></div>
+          </dl>
+        </article>
+        <article class="rocket-card">
+          <header><h3>Falcon&nbsp;Heavy</h3><span class="tag tag-live">Operational</span></header>
+          <p class="rc-desc">Three Falcon&nbsp;9 cores flying as one â€” 27 engines at liftoff, with two side boosters that return in tandem.</p>
+          <dl class="spec">
+            <div><dt>Height</dt><dd>70&nbsp;m</dd></div>
+            <div><dt>Payload â†’ LEO</dt><dd>63,800&nbsp;kg</dd></div>
+            <div><dt>Liftoff thrust</dt><dd>22,819&nbsp;kN</dd></div>
+            <div><dt>Engines</dt><dd>27 Ã— Merlin&nbsp;1D</dd></div>
+            <div><dt>Flights</dt><dd>12 Â· 12 successes</dd></div>
+            <div><dt>Debut</dt><dd>2018 Â· Starman</dd></div>
+          </dl>
+        </article>
+        <article class="rocket-card featured">
+          <header><h3>Starship</h3><span class="tag tag-test">In flight testing</span></header>
+          <p class="rc-desc">The tallest, most powerful rocket ever flown â€” and the first designed to be <em>fully</em> reusable, booster and ship alike.</p>
+          <dl class="spec">
+            <div><dt>Height</dt><dd>123&nbsp;m</dd></div>
+            <div><dt>Payload â†’ LEO</dt><dd>100,000&nbsp;kg <span class="mut">design</span></dd></div>
+            <div><dt>Liftoff thrust</dt><dd>73,550&nbsp;kN</dd></div>
+            <div><dt>Engines</dt><dd>33 Ã— Raptor&nbsp;2</dd></div>
+            <div><dt>Flights</dt><dd>Integrated flight testing</dd></div>
+            <div><dt>Milestone</dt><dd>Tower-caught booster, 2024</dd></div>
+          </dl>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CADENCE â€” THE RAMP ============ -->
+  <section class="section cadence" id="cadence" aria-labelledby="cad-h">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="kicker"><span class="k-idx">03</span> LAUNCH CADENCE</p>
+        <h2 id="cad-h">The line that bends straight up.</h2>
+        <p class="sec-sub">Orbital launches per year â€” from two flights in 2010 to well past a hundred. Reusability turned a rocket company into a launch cadence.</p>
+      </header>
+      <figure class="chart-wrap panel">
+        <div class="chart" id="cadenceChart" role="img" aria-label="Bar chart of SpaceX orbital launches per year rising from 2 in 2010 to 134 in 2024"></div>
+        <figcaption>Orbital launches per year, 2010â€“2024 Â· <span class="mut">public record (Wikipedia: List of Falcon 9 and Falcon Heavy launches)</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ FLIGHT LOG â€” LAUNCH EXPLORER ============ -->
+  <section class="section log" id="log" aria-labelledby="log-h">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="kicker"><span class="k-idx">04</span> FLIGHT LOG</p>
+        <h2 id="log-h">Search the manifest.</h2>
+        <p class="sec-sub">Upcoming and recent missions, live from public data. Filter by vehicle or status, or search a mission by name.</p>
+      </header>
+
+      <div class="log-controls">
+        <div class="search">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m20 20-3.2-3.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <input type="search" id="logSearch" placeholder="Search missions â€” Starlink, Transporter, Dragonâ€¦" aria-label="Search missions" />
+        </div>
+        <div class="chips" id="logChips" role="group" aria-label="Filter missions">
+          <button class="chip on" data-filter="all" aria-pressed="true">All</button>
+          <button class="chip" data-filter="upcoming" aria-pressed="false">Upcoming</button>
+          <button class="chip" data-filter="Falcon 9" aria-pressed="false">Falcon 9</button>
+          <button class="chip" data-filter="Falcon Heavy" aria-pressed="false">Falcon Heavy</button>
+          <button class="chip" data-filter="Starship" aria-pressed="false">Starship</button>
+        </div>
+      </div>
+
+      <ol class="log-list" id="logList" aria-live="polite">
+        <!-- JS renders rows; static seed below for no-JS / first paint -->
+        <li class="log-row seed"><span class="lr-date">2026-07-07</span><span class="lr-name">Transporter 17 (Dedicated SSO Rideshare)</span><span class="lr-rocket">Falcon 9</span><span class="lr-orbit">SSO</span><span class="lr-badge b-go">GO</span></li>
+        <li class="log-row seed"><span class="lr-date">2026-07-05</span><span class="lr-name">Starlink Group 10-50</span><span class="lr-rocket">Falcon 9</span><span class="lr-orbit">LEO</span><span class="lr-badge b-ok">SUCCESS</span></li>
+        <li class="log-row seed"><span class="lr-date">2026-06-29</span><span class="lr-name">Sirius SXM-11</span><span class="lr-rocket">Falcon 9</span><span class="lr-orbit">GTO</span><span class="lr-badge b-ok">SUCCESS</span></li>
+      </ol>
+      <div class="log-more"><button id="logMore" class="btn btn-ghost sm" hidden>Show more missions</button></div>
+    </div>
+  </section>
+
+  <!-- ============ TIMELINE ============ -->
+  <section class="section timeline" id="timeline" aria-labelledby="tl-h">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="kicker"><span class="k-idx">05</span> MILESTONES</p>
+        <h2 id="tl-h">From a startup to the launch pad of record.</h2>
+      </header>
+      <ol class="tl" id="tl">
+        <li><span class="tl-year">2002</span><div class="tl-card"><h3>SpaceX is founded</h3><p>A goal that sounded absurd at the time: make spaceflight radically cheaper â€” and, one day, life multiplanetary.</p></div></li>
+        <li><span class="tl-year">2008</span><div class="tl-card"><h3>Falcon&nbsp;1 reaches orbit</h3><p>On its fourth attempt, Falcon&nbsp;1 becomes the first privately developed, liquid-fueled rocket to reach Earth orbit.</p></div></li>
+        <li><span class="tl-year">2012</span><div class="tl-card"><h3>Dragon berths with the ISS</h3><p>The first commercial spacecraft to deliver cargo to the International Space Station.</p></div></li>
+        <li><span class="tl-year">2015</span><div class="tl-card"><h3>First orbital-class landing</h3><p>A Falcon&nbsp;9 first stage returns and lands upright â€” the moment reusability stopped being a slide and became real.</p></div></li>
+        <li><span class="tl-year">2017</span><div class="tl-card"><h3>First re-flight of a booster</h3><p>A flown Falcon&nbsp;9 launches again. Reusability turns from a demo into an operating principle.</p></div></li>
+        <li><span class="tl-year">2018</span><div class="tl-card"><h3>Falcon&nbsp;Heavy debuts</h3><p>The most powerful operational rocket of its era flies â€” landing two side boosters in perfect sync.</p></div></li>
+        <li><span class="tl-year">2020</span><div class="tl-card"><h3>Crew Dragon flies astronauts</h3><p>Demo-2 â€” the first crewed launch from U.S. soil since 2011, and the first by a commercial spacecraft.</p></div></li>
+        <li><span class="tl-year">2024</span><div class="tl-card"><h3>The tower catches a booster</h3><p>On Starship Flight&nbsp;5, the launch tower's arms catch the returning Super&nbsp;Heavy out of the air. A first in spaceflight.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section faq" id="faq" aria-labelledby="faq-h">
+    <div class="wrap narrow">
+      <header class="sec-head">
+        <p class="kicker"><span class="k-idx">06</span> FAQ</p>
+        <h2 id="faq-h">The honest fine print.</h2>
+      </header>
+      <div class="faq-list">
+        <details><summary>Is spacex.digital the official SpaceX website?</summary><p>No. spacex.digital is an independent, unofficial project and is not affiliated with, endorsed by, or connected to Space Exploration Technologies Corp. For official information visit <a href="https://www.spacex.com" rel="noopener nofollow" target="_blank">spacex.com</a>.</p></details>
+        <details><summary>Where does the launch data come from?</summary><p>Live launch and vehicle data is surfaced from The Space Devs' <a href="https://thespacedevs.com" rel="noopener" target="_blank">Launch Library&nbsp;2</a> API, available under a Creative Commons BY&nbsp;4.0 license. Historical milestones and yearly cadence figures are drawn from public record.</p></details>
+        <details><summary>How many times has SpaceX launched?</summary><p>SpaceX has flown 699 launches with 684 successes â€” a 97.9% success rate â€” including a streak of 184 consecutive successful launches. Figures update live from Launch Library&nbsp;2.</p></details>
+        <details><summary>Which rockets does SpaceX fly?</summary><p>The active fleet is Falcon&nbsp;9 (a reusable two-stage workhorse), Falcon&nbsp;Heavy (three Falcon&nbsp;9 cores combined), and Starship â€” a fully reusable super-heavy vehicle in flight testing. Dragon is the crew and cargo spacecraft.</p></details>
+        <details><summary>When is the next SpaceX launch?</summary><p>The next scheduled launch â€” its rocket, pad and target orbit â€” is shown live at the <a href="#top">top of the page</a> with a real-time countdown, refreshed automatically from public launch data.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT / CTA BAND ============ -->
+  <section class="section about" id="about" aria-labelledby="ab-h">
+    <div class="about-media" aria-hidden="true">
+      <img src="assets/img/earth-limb.jpg" alt="" loading="lazy" decoding="async" />
+      <div class="about-scrim"></div>
+    </div>
+    <div class="wrap about-inner">
+      <p class="kicker light"><span class="k-idx">07</span> ABOUT THIS PROJECT</p>
+      <h2 id="ab-h">A quiet console for a company that never stops flying.</h2>
+      <p class="about-copy">spacex.digital is an independent tribute and tracker â€” built for people who want to know when the next rocket goes up, how the record stands, and how the vehicles stack up, without the noise. Every figure here is real, sourced, and updated live where the data allows.</p>
+      <div class="about-actions">
+        <a class="btn btn-amber" href="#top">See the next launch</a>
+        <a class="btn btn-ghost light" href="https://thespacedevs.com" rel="noopener" target="_blank">Data by The Space Devs</a>
+      </div>
+      <p class="disclaimer">Independent &amp; unofficial Â· not affiliated with or endorsed by Space Exploration Technologies Corp. Â· launch data Â© The Space Devs (CC&nbsp;BY&nbsp;4.0) Â· milestones &amp; cadence from public record.</p>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="wrap foot-row">
+    <div class="foot-brand">
+      <span class="brand-word">spacex<span class="brand-dot">.digital</span></span>
+      <p>An independent SpaceX launch tracker &amp; data hub.</p>
+      <p class="foot-updated" id="footUpdated">Data snapshot loaded.</p>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <div><h4>Explore</h4><a href="#top">Next launch</a><a href="#fleet">The fleet</a><a href="#log">Flight log</a><a href="#timeline">Timeline</a></div>
+      <div><h4>Sources</h4><a href="https://thespacedevs.com" rel="noopener" target="_blank">The Space Devs</a><a href="https://en.wikipedia.org/wiki/SpaceX" rel="noopener" target="_blank">SpaceX â€” Wikipedia</a><a href="https://www.spacex.com" rel="noopener nofollow" target="_blank">SpaceX (official)</a></div>
+    </nav>
+  </div>
+  <div class="wrap foot-legal">
+    <span>Â© <span id="yr">2026</span> spacex.digital Â· independent project</span>
+    <span>Not affiliated with, endorsed by, or connected to Space Exploration Technologies Corp.</span>
+  </div>
+</footer>
+
+<!-- Easter egg: launch sequence overlay -->
+<div class="launch-seq" id="launchSeq" aria-hidden="true">
+  <div class="ls-count" id="lsCount">3</div>
+  <div class="ls-word" id="lsWord"></div>
+  <canvas id="lsCanvas"></canvas>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="app.js" defer></script>
+</body>
+</html>
